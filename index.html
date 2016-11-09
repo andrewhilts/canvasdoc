@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.centered {text-align:center;}
+#bigLink {
+	display:block; 
+	font-size:2rem;
+	cursor:pointer;
+	padding:1em;
+	width:10em;
+	border-radius:10px;
+	position: fixed;
+	  top: 50%;
+	  left: 50%;
+	  /* bring your own prefixes */
+	  transform: translate(-50%, -50%);
+}
+#bigLink:disabled {
+	cursor:auto;
+}
+#source {
+	position:absolute;
+	left:-21000px;
+}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<body>
+<h1 class="centered">Unicode PDF Client-side Generation P.O.C.</h1>
+<p class="centered">This outputs a dynamic-length PDF from a HTML source.</p>
+<p class="centered">Current HTML elements supported are limited to lists and paragraphs.<br/>
+Styling is ignored, and other block-level elements are treated as paragraphs. Other block level elements are treated as line breaks and don't have spacing between them, unlike paragrahs.</p>
+<p class="centered">The PDF's page size is customizable.</p>
+<button id="bigLink" disabled="true">Generating PDF</button>
+
+<div id="playground"></div>
+<div id="source">
+<div>Line breaks</div>
+<div>Testing line breaks</div>
+<div>here</div>
+<p>光感因此消認我是評足知行代說極筆生素家如其、每它不區想？地生公南策解，願不們？不國意的國不為在因正投轉皮部品一北。兒達看條想同克有了代：風評遠，然外打為關風的物仍格主除在地市，座北包麼親，很是念並才環不念上國向義於可合可的標小下第女你他的文，指要字，小許了理多！以而卻相養力便育河身是用，媽了訴間招義職是屋羅多那他笑股臉人世影，紀不先紀分書不的是。房和關紀安實、說加我覺不或所命機的心話天去可，羅未嗎萬否然頭際衣，證是雄斯花真格上為大面。天小飛不客。的或子，我生象爭然質怎食近提關馬，油爸的生物技包！</p>
+<p>😄 😃 😀 😊 ☺ 😉 😍😘😚😗 😙 😜 😝 😛 😳 😁 😔 😌 😒 😞 😣 😢 😂 😭 😪 😥 😰 😅 😓 😩 😫😨😱😠 😡 😤 😖 😆 😋 😷 😎 😴 😵 😲 😟 😦 😧 😈 👿 😮 😬 😐 😕 😯 😶 😇 😏 😑 👲 👳 👮 👷 💂 👶 👦 👧 👨👩👴👵 👱 👼 👸 👹 👺 💀 👽 💩 😺 😸 😻 😽 😼 🙀 😿 😹 😾 🐵 🙈 🙉 🙊 🐶 🐺 🐱 🐭 🐹 🐸 🐯 🐨 🐻 🐷 🐽 🐮 🐗 🐒 🐴 🐑 🐘 🐼 🐧 🐦 🐤 🐥 🐣 🐔 🐍 🐢 🐛 🐝 🐜 🐞 🐌 🐙 🐚 🐠 🐟 🐬 🐳 🐋 🐄 🐏 🐀 🐃 🐅 🐇 🐉 🐎 🐐 🐓 🐕 🐖 🐁 🐂 🐲 🐡 🐊 🐫 🐪 🐆 🐈 🐩 🐾 💐 🌸 🌷 🍀 🌹 🌻 🌺 🍁 🍃 🍂 🌿 🌾 🍄 🌵 🌴 🌲 🌳 🌰 🌱 🌼 🍎 🍏 🍊 🍋 🍒 🍇 🍉 🍓 🍑 🍈 🍌 🍐 🍍 🍠 🍆 🍅 🌽 💮</p>
+<p>Λορεμ ιπσθμ δολορ σιτ αμετ, μαιορθμ νοστρθμ vολθτπατ ηισ ιδ, θτ νονθμυ μελιορε ηασ, πρι ετ μοvετ σενσεριτ. Εσσε qθαλισqθε σεδ εθ, νεc νεμορε αδιπισcι νε, θτ cονσθλ φαcιλισισ εοσ. Ιδ μελ ιθδιcο vοcιβθσ ρεπθδιαρε. Θτ αεqθε σεμπερ μελ. Εθ ιθσ διcθντ μοδερατιθσ περcιπιτθρ, vιδιτ αθδιρε γραεcισ ετ vελ.</p>
+<ul>
+<li>相ラシフ反別ナホ万軍ヘオタサ改返80厳各ニ読5準げ亜37子ユサツト護地ずりく先聞ル分内ばぐ知敷木てレい。場サソエ麻過だ人皇切ぽぞ迫作転ニ成育レツ経健区交くすおん相入ヘミ再販イニウ較宮職ンみま。座ヘムタス気在ざい認眠ずく望之フコキ邸否レわル背社ゃー歴更げごイ回事ソヤテ税自滋ゃ出商かすゆ直悩ムタヒツ染図くでた庭三コ綿食れょ断目や止住普河制べ。</li>
+
+<li>62元旗昼30界うぱ準境リず治名話モチワヨ者等来イ成会込月スクソル戦悔ふぎゅイ読時てくク路最ロタツス市本ヌツ昨軍くお円盾ぴ。暮ニ告陸イちなる減視なてにそ務謙マネソ試19大ヘク休変しじえ義援ぴふ事報人団ラフケ省訪済媛緒えもぐ。野エ動元てー内録ぶー業水ばにぞや同雅チヱ余康ヒナヱ旅軽し求問ニ真1談レオ攻変むひ数8止所ぞか利法ごぴ出込ら強谷サマカツ後鏝びさじ警悪北保がどきス。</li>
+
+<li>波へぜドひ偽質マヒナワ気企ヱレヨイ担核にてめ巡年ネヨラハ第止トつれ聞共かフり誤51頼9延上乗歌規ぞぱ。第クるひ要査ク吉恵れのスぎ嬉43領ミ被景もどばラ頃犯えい声6用毎レラメヨ画棋すつリ玲地す私投ドつてレ。72品鷹官条む買同モイ毎音ニヲ綸右けほ党日ゆせるさ船日げ聞億ぼあやづ安疑南ヌハメイ韓投ケネシ権宿玉易トひ。</li>
+
+<li>度モユヨ生技アサホト新紙ロ仕書す村取技コク送見けょほれ画進ヨオクワ勢正よめに機58方ば東件ム必集開スヌヒ争空ひッ動20交示分やでさあ。分っぽン新間ユメ待応ヱユレ北男ソリメ同情も展専ニセキネ集阜トぱ当表受ル家錦裁えぐ万禁ンちい正6崎ぞろへ計能トにた登要へなちげ生金緑ー幅熱林み政幅採洋亮なし。</li>
+
+<li>相ミセ写6険ヲメリロ上更クタソマ社竹有テ泰男でど教意ぽし経説つさ材安こ責宮炭熟耳ふンぞル。3知解厚らぶ備登ヨワテサ提葉びり読楽ぱべ分示ト載拡エアノナ掲調にあ事2年ワヒロマ県捕八流群ぴど。対ハナサ衛新篠フサソオ新女アホセ策挑ほはず号方士る質町ぐちふッ事57属ソセミヲ予局あレのリ志埼ヒサ発能たるよづ断剛えぽろ。</li>
+</ul>
+<p>jest tekstem stosowanym jako przykładowy wypełniacz w przemyśle poligraficznym. Został po raz pierwszy użyty w XV w. przez nieznanego drukarza do wypełnienia tekstem próbnej książki. Pięć wieków później zaczął być używany przemyśle elektronicznym, pozostając praktycznie niezmienionym. Spopularyzował się w latach 60. XX w. wraz z publikacją arkuszy Letrasetu, zawierających fragmenty Lorem Ipsum, a ostatnio z zawierającym różne wersje Lorem Ipsum oprogramowaniem przeznaczonym do realizacji druków na komputerach osobistych, jak Aldus PageMaker</p>
+</div>
+<div id="canvascontainer"></div>
+</body>
+<script src="linecalc.js"></script>
+<script src="pdfmake.min.js"></script>
+<script src="canvasDoc.js"></script>
+<script>
+// Set up document, define page size and margin
+var testDoc = new Document("letter", [11.7647, 11.7647, 11.7647, 11.7647]);
+
+//convert HTML in #source element to canvas-based document
+testDoc.writeHTMLtoDoc(document.getElementById('source'));
+
+// convert series of canvases into PDF
+testDoc.createPDF();
+
+// Wire up button to download the generated PDF
+var downloadBtn = document.getElementById("bigLink")
+downloadBtn.disabled = false;
+downloadBtn.innerHTML = "Get PDF";
+downloadBtn.onclick = testDoc.savePDF;
+</script>
+</html>

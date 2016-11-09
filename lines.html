@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.centered {text-align:center;}
+#bigLink {
+	display:block; 
+	font-size:2rem;
+	cursor:pointer;
+	padding:1em;
+	width:10em;
+	border-radius:10px;
+	position: fixed;
+	  top: 50%;
+	  left: 50%;
+	  /* bring your own prefixes */
+	  transform: translate(-50%, -50%);
+}
+#bigLink:disabled {
+	cursor:auto;
+}
+#request {
+	position:absolute;
+	left:-21000px;
+}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<body>
+<div id="playground"></div>
+<request-template id="request" jurisdiction="jurisdiction" industry="industry" operator="operator" servicelist="servicelist" subject="subject" date="date" componentquestions="componentquestions" componentdata="componentdata" services="services" pdf="pdf" email="email" emailsubject="'Formal Request for Personal Information Held By Your Company'" pdffilenameprefix="'Access_To_Information_Request'" class="ng-isolate-scope"><form method="post" style="display:none" action="https://api.ami.local/notifications/pdf" target="_blank" class="ng-pristine ng-valid ng-scope"></form><div class="letter ng-scope"><p><span style="font-weight: 400;">敬啟者，</span></p>
+<p><span style="font-weight: 400;">本人特此來信作<span style="font-weight: 400;">查閱資料要求</span>，現附上本人（</span><span style="font-weight: 400;">）的</span><span style="font-weight: 400;">身份證明文件（附件一）。</span></p>
+<p><span style="font-weight: 400;">本人的資料如下：</span></p>
+<p>This is a test</p>
+<p>Ηις δωσενδι ασυσαθα κυαερενδυμ αν. Φαλλι φιφενδω ποσθυλανθ πρι υθ</p>
+<p>💩💩💩💩💩💩💩💩💩💩💩💩💩💩💩</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</p><ul>
+<li ng-repeat="identifier in subject.basic_personal_info | object2Array | orderBy:'+weight'" class="ng-binding ng-scope">英文姓名: Andrew</li><li ng-repeat="identifier in subject.basic_personal_info | object2Array | orderBy:'+weight'" class="ng-binding ng-scope">中文姓名: d;fgkl</li><li ng-repeat="identifier in subject.basic_personal_info | object2Array | orderBy:'+weight'" class="ng-binding ng-scope">香港身份證 或 護照號碼: kljl</li><li ng-repeat="identifier in subject.basic_personal_info | object2Array | orderBy:'+weight'" class="ng-binding ng-scope">Address 1: jlk</li><li ng-repeat="identifier in subject.basic_personal_info | object2Array | orderBy:'+weight'" class="ng-binding ng-scope">City: jljl</li><li ng-repeat="identifier in subject.basic_personal_info | object2Array | orderBy:'+weight'" class="ng-binding ng-scope">Telephone Number: jl</li><li ng-repeat="identifier in subject.basic_personal_info | object2Array | orderBy:'+weight'" class="ng-binding ng-scope">Email Address: ljlj</li>
+</ul>
+
+<p><span style="font-weight: 400;">本人現查詢本人被 貴 公司收集及存取，有關本人的（付款紀錄／賬戶資料／使用紀錄）由＿＿＿＿＿＿＿＿＿（日期）至＿＿＿＿＿＿＿＿＿（日期）的資料，包括但不限於以下事項：</span></p>
+<ul>
+<li ng-repeat="data in componentdata | filter: { selected: true }" ng-bind-html="data.data" class="ng-binding ng-scope">通話紀錄（如：曾撥出電話的電話號碼、其時間及日期、通話過程、路由資料和與該電訊通話有關的任何地理位置或行動通訊塔資料）</li><li ng-repeat="data in componentdata | filter: { selected: true }" ng-bind-html="data.data" class="ng-binding ng-scope">已收集有關本人的資料，或與本人的賬戶有關，並正使用貴 公司手提電話裝置的人物／裝置</li><li ng-repeat="data in componentdata | filter: { selected: true }" ng-bind-html="data.data" class="ng-binding ng-scope">任何您曾收集有關本人的地理位置資料，本人的裝置，和／或與本人的賬戶有關的（如：全球定位系統資料、行動通訊塔資料）</li><li ng-repeat="data in componentdata | filter: { selected: true }" ng-bind-html="data.data" class="ng-binding ng-scope">所有與本人有關聯的網際網絡登錄地址、本人的裝置，和／或本人的賬戶（如：本人的裝置／路由器所分配的網際網絡地址、本人造訪的網際網絡地址或網域名稱，及時間、日期與連接埠號碼</li><li ng-repeat="data in componentdata | filter: { selected: true }" ng-bind-html="data.data" class="ng-binding ng-scope">任何向其他單位（包括執法單位和其他的國家機構）披露屬於本人的個人資料，或與本人賬戶或裝置有關的資料。</li><li ng-repeat="data in componentdata | filter: { selected: true }" ng-bind-html="data.data" class="ng-binding ng-scope">手機發送的訊息或多媒體訊息（發送及接受，包括日期、時間及接收訊息者的資訊）</li><li ng-repeat="data in componentdata | filter: { selected: true }" ng-bind-html="data.data" class="ng-binding ng-scope">您曾儲存有關本人的「用戶資料」名單，本人的裝置，和／或 本人的賬戶</lili ng-repeat="data in componentdata | filter: { selected: true }" ng-bind-html="data.data" class="ng-binding ng-scope">您曾收集、保留、或源自電訊服務或裝置；與本人，或曾使用貴 公司服務發送或收到並與本人的賬戶有關的任何附加資料</li>
+</ul>
+<p><span style="font-weight: 400;">此外，本人就此要求您於收到本信的四十天內，就有否保留上述與個人資料（私隱）條例19(1)一致的資料，通知本人（及向本人提供您曾保留資料的副本）。</span></p>
+<p><span style="font-weight: 400;">現附上本查詢資料信件的副本（透過掛號信／平郵／電郵）的（英文／中文／該保留資料所屬的語言）。</span></p>
+<p><span style="font-weight: 400;">本信所提供的個人資料只供本人是次</span><span style="font-weight: 400;">查閱資料要求</span><span style="font-weight: 400;">之用，敬希垂注。</span></p>
+<p><span style="font-weight: 400;">敬候回覆，順祝台安。</span></p>
+<p><span style="font-weight: 400;">此致</span></p>
+</div></request-template>
+
+</body>
+<script src="linecalc.js"></script>
+<script>
+	var e = document.getElementById('request');
+	console.log(textToWords(e.innerText));
+</script>
+</html>
