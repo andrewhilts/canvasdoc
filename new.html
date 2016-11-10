@@ -1,67 +1,50 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
-.centered {text-align:center;}
-#bigLink {
-	display:block; 
-	font-size:2rem;
-	cursor:pointer;
-	padding:1em;
-	width:10em;
-	border-radius:10px;
-	margin: 40px auto 0 auto;
-}
-#bigLink:disabled {
-	cursor:auto;
-}
-#container {
-	width: 91em;
-	margin:2em auto 0 auto;
-}
-#source, #canvascontainer {
-	float: left;
-}
-#canvascontainer img {
-	max-width:100%;
-	max-height:100%;
-}
-#canvascontainer {
-	width:45em;
-	height:58.23em;
-}
-#source {
-	width:35em;
-	padding:5em;
-}
-#source, #canvascontainer img {
-	border:1px solid #ccc;
-}
-.hidden {
-	position:absolute;
-	left:-21000px;
-}
-</style>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<style>
+#source {
+ -webkit-column-width: 722px;
+  -moz-column-width: 722px;
+  column-width: 722px;
+   -webkit-column-gap: 20px;
+      -moz-column-gap: 20px;
+           column-gap: 20px;
+  width:2700px;
+  height:934px;
+}
+
+</style>
 </head>
 <body>
-<h1 class="centered">Unicode PDF Client-side Generation P.O.C.</h1>
-<p class="centered">This outputs a dynamic-length PDF from a HTML source.</p>
-<p class="centered">Current HTML elements supported are limited to lists and paragraphs.<br/>
-Styling is ignored, and other block level elements are treated as line breaks and don't have spacing between them, unlike paragrahs.</p>
-<p class="centered">Right to left is supported, but there are some issues about text flow in browsers that don't support <a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/direction">CanvasRenderingContext2D.direction</a> (Only works properly in Safari, or Chrome with experiemental canvas features enabled). </p>
-<p class="centered">The PDF's page size is customizable.</p>
-<p class="centered">Source code: <a href="https://github.com/andrewhilts/canvasdoc">https://github.com/andrewhilts/canvasdoc</a></p>
-<button id="bigLink" disabled="true">Generating PDF</button>
 
-<div id="playground"></div>
-<div id="container">
-<h2 style="clear:both; text-align:center">Source vs. Canvas Output</h2>
+<h1>Source</h1>
 <div id="source">
+  <style>
+    .document {font-size:20px; -webkit-column-width: 722px;
+  -moz-column-width: 722px;
+  column-width: 722px;
+   -webkit-column-gap: 20px;
+      -moz-column-gap: 20px;
+           column-gap: 20px;
+           height:934px;}
+  </style>
+  <div class="document">
 <div>Line breaks</div>
 <div>Testing line breaks</div>
 <div>here</div>
-	<p lang="zh">光感因此消認我是評足知行代說極筆生素家如其、每它不區想？地生公南策解，願不們？不國意的國不為在因正投轉皮部品一北。兒達看條想同克有了代：風評遠，然外打為關風的物仍格主除在地市，座北包麼親，很是念並才環不念上國向義於可合可的標小下第女你他的文，指要字，小許了理多！以而卻相養力便育河身是用，媽了訴間招義職是屋羅多那他笑股臉人世影，紀不先紀分書不的是。房和關紀安實、說加我覺不或所命機的心話天去可，羅未嗎萬否然頭際衣，證是雄斯花真格上為大面。天小飛不客。的或子，我生象爭然質怎食近提關馬，油爸的生物技包！</p>
+  <table border=1>
+    <tr>
+      <th>Test table</th>
+      <th>Test Table 2</th>
+    </tr>
+    <tr>
+      <td>Test data</td>
+      <td>Test data 2</td>
+    </tr>
+  </table>
+  <p lang="zh"><strong>我是評足知行</strong>代說極筆生素家如其、每它不區想？地生公南策解，願不們？不國意的國不為在因正投轉皮部品一北。兒達看條想同克有了代：風評遠，然外打為關風的物仍格主除在地市，座北包麼親，很是念並才環不念上國向義於可合可的標小下第女你他的文，指要字，小許了理多！以而卻相養力便育河身是用，媽了訴間招義職是屋羅多那他笑股臉人世影，紀不先紀分書不的是。房和關紀安實、說加我覺不或所命機的心話天去可，羅未嗎萬否然頭際衣，證是雄斯花真格上為大面。天小飛不客。的或子，我生象爭然質怎食近提關馬，油爸的生物技包！</p>
 <p lang="ru">Ех нулла суавитате салутатус вих, фуиссет иудицабит хас не. Ессе солум глориатур не вим, ест еи аеяуе маиестатис. Сит ут иллум игнота путент. Модус оффендит цотидиеяуе дуо ан, еи нуллам примис сеа. Меа солум атяуи еверти ид, еа вери дицам вих, цу дуо агам пертинациа персеяуерис. Долорес цонвенире дуо ид, не яуис атяуи омнес еам. Тота нонумы долорум но еум, цонсулату сентентиае сеа еа, еу вих путант сцрипсерит.</p>
 <p dir="rtl">Test</p>
 <p dir="rtl">Test test test</p>
@@ -98,32 +81,17 @@ Styling is ignored, and other block level elements are treated as line breaks an
 
 </ul>
 </div>
-<div id="canvascontainer"></div>
 </div>
-</body>
-<script src="linecalc.js"></script>
 <script src="pdfmake.min.js"></script>
-<script src="canvasDoc.js"></script>
-<script>
-// Set up document, define page size and margin
-var testDoc = new Document("letter", [11.7647, 11.7647, 11.7647, 11.7647]);
-
-//convert HTML in #source element to canvas-based document
-testDoc.writeHTMLtoDoc(document.getElementById('source'));
-
-// convert series of canvases into PDF
-testDoc.createPDF();
-
-var canvasArea = document.getElementById("canvascontainer");
-for(var i=0; i < testDoc.pages.length; i++){
-	img = new Image;
-	img.src = testDoc.pages[i].dataURL
-	canvasArea.appendChild(img);
-}
-// Wire up button to download the generated PDF
-var downloadBtn = document.getElementById("bigLink")
-downloadBtn.disabled = false;
-downloadBtn.innerHTML = "Get PDF";
-downloadBtn.onclick = testDoc.savePDF;
+<script src="c.js"></script>
+<script type="text/javascript">
+var source = document.getElementById('source');
+doc = new cd_Document();
+cd_canvas_doc = new cd_CanvasDocument();
+cd_canvas_doc.createFromEL(source, function(img){
+  console.log(img);
+  document.appendChild(img);
+})
 </script>
+</body>
 </html>
