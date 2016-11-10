@@ -22,7 +22,7 @@ function Page(pageSize, margins, dpiFactor){
 		y:  pageSize.height - margins.bottom
 	};
 
-	fontSize = (40 * dpiFactor).toFixed(0);
+	fontSize = (35 * dpiFactor).toFixed(0);
 	page.fontFamily = "Times New Roman, serif"
 	page.lineHeight = fontSize * 1.5;
 
