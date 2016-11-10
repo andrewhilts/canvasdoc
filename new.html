@@ -88,8 +88,9 @@
 var source = document.getElementById('source');
 doc = new cd_Document();
 cd_canvas_doc = new cd_CanvasDocument();
-cd_canvas_doc.createFromEL(source, function(img){
-  console.log(img);
+cd_canvas_doc.createFromEL(source, function(){
+  img = new Image;
+  img.url = cd_canvas_doc.canvas.toDataURL("image/jpeg");
   document.appendChild(img);
 })
 </script>
