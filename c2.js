@@ -48,7 +48,7 @@ function cd_CanvasDocument(pageSize, sourcecanvas, numberOfPages, pageWidth, pag
 	self.canvasImg = new Image();
 	self.canvasImg.src = self.canvas.toDataURL("image/jpeg");
 	self.pageHeight = pageHeight;
-	self.pageWidth = pageWidth;
+	self.pageWidth = pageWidth+8;
 
 	self.createPages = function(){
 		self.pages = []
@@ -65,7 +65,7 @@ function cd_CanvasDocument(pageSize, sourcecanvas, numberOfPages, pageWidth, pag
 			ctx.fillStyle = "#ffffff";
 			ctx.fillRect(0,0,self.pageWidth,self.pageHeight);
 			// console.log(self.canvasImg, xOffset, 0, self.pageWidth,self.pageHeight, 0, 0, self.pageWidth,self.pageHeight);
-			ctx.drawImage(self.canvasImg, xOffset, 0, self.pageWidth,self.pageHeight, 0, 0, self.pageWidth,self.pageHeight);
+			ctx.drawImage(self.canvas, xOffset, 0, self.pageWidth,self.pageHeight, 0, 0, self.pageWidth,self.pageHeight);
 			dataurl = canvas.toDataURL("image/jpeg");
 			pic = new Image()
 			pic.src = dataurl;
@@ -83,18 +83,18 @@ function cd_CanvasDocument(pageSize, sourcecanvas, numberOfPages, pageWidth, pag
 	}
 	self.createPDF = function(){
 		var dd = {
-			pageSize: self.pageSize,
+			pageSize: "letter",
 			content: [],
-			pageMargins: 55,
+			pageMargins: 0,
 			header: {stack: [
             {text: ''}
         ],
-		        margin: [55,0]
+		        margin: [0,0]
 		    },
 		    footer: {stack: [
             {text: ''}
         ],
-		        margin: [55,0]
+		        margin: [0,0]
 		    },
 		}
 		// Add our canvas pages to the PDF, scale to size

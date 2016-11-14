@@ -1,116 +1,59 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <style>
-body {
-  font-size:12px;
+.centered {text-align:center;}
+#bigLink {
+	display:block; 
+	font-size:2rem;
+	cursor:pointer;
+	padding:1em;
+	width:10em;
+	border-radius:10px;
+	position: fixed;
+	  top: 50%;
+	  left: 50%;
+	  /* bring your own prefixes */
+	  transform: translate(-50%, -50%);
 }
-#source {
- -webkit-column-width: 2100px;
-  -moz-column-width: 2100px;
-  column-width: 2100px;
-   -webkit-column-gap: 36px;
-      -moz-column-gap: 36px;
-           column-gap: 36px;
-           -webkit-column-rule: 4px outset #ccc; -moz-column-rule: 4px outset #ccc; column-rule: 4px outset #ccc;
-  height:2715px;
-  width:2100px;
-  font-size: 36px;
+#bigLink:disabled {
+	cursor:auto;
 }
-.abs-hidden {
-  position:absolute;
-  top:-10000px;
-}
-#sourcecanvas {
-  display:none;
-}
-img {
-  /*position: absolute; */
+#request {
+	position:absolute;
+	left:-21000px;
 }
 </style>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 <body>
-
-<div>
-<div class="abs-hidden">
-<h1>Source</h1>
-<div id="source">
-  <div class="document">
-  <h2>Header</h2>
-<div>Line breaks</div>
-<div>Testing line breaks</div>
-<div>here</div>
-  <table border=1>
-    <tr>
-      <th>Test table</th>
-      <th>Test Table 2</th>
-    </tr>
-    <tr>
-      <td>Test data</td>
-      <td>Test data 2</td>
-    </tr>
-  </table>
-  <p lang="zh"  style="background:#403E3C; color:#eee; padding:10px"><strong>我是評足知行</strong>代說極筆生素家如其、每它不區想？地生公南策解，願不們？不國意的國不為在因正投轉皮部品一北。兒達看條想同克有了代：風評遠，然外打為關風的物仍格主除在地市，座北包麼親，很是念並才環不念上國向義於可合可的標小下第女你他的文，指要字，小許了理多！以而卻相養力便育河身是用，媽了訴間招義職是屋羅多那他笑股臉人世影，紀不先紀分書不的是。房和關紀安實、說加我覺不或所命機的心話天去可，羅未嗎萬否然頭際衣，證是雄斯花真格上為大面。天小飛不客。的或子，我生象爭然質怎食近提關馬，油爸的生物技包！</p>
-<p lang="ru">Ех нулла суавитате салутатус вих, фуиссет иудицабит хас не. Ессе солум глориатур не вим, ест еи аеяуе маиестатис. Сит ут иллум игнота путент. Модус оффендит цотидиеяуе дуо ан, еи нуллам примис сеа. Меа солум атяуи еверти ид, еа вери дицам вих, цу дуо агам пертинациа персеяуерис. Долорес цонвенире дуо ид, не яуис атяуи омнес еам. Тота нонумы долорум но еум, цонсулату сентентиае сеа еа, еу вих путант сцрипсерит.</p>
-<p dir="rtl">Test</p>
-<p dir="rtl">Test test test</p>
-<p dir="rtl" lang="ar">جهة عن</p>
-<p dir="rtl" lang="ar">جهة عن ودول أحدث أجزاء. لدحر ليركز أم وتم, ما تعد الساحل بمحاولة الأراضي. ٣٠ عجّل استرجاع واندونيسيا، عدم, حدى ٣٠ الدول الساحل البرية. إحتار للجزر إيو إذ, تونس إعلان إيو من. إحكام المارق بتطويق من دون, عل بقعة فسقط مدن, به، من أحكم جسيمة.</p>
-<p>😄 😃 😀 😊 ☺ 😉 😍😘😚😗 😙 😜 😝 😛 😳 😁 😔 😌 😒 😞 😣 😢 😂 😭 😪 😥 😰 😅 😓 😩 😫😨😱😠 😡 😤 😖 😆 😋 😷 😎 😴 😵 😲 😟 😦 😧 😈 👿 😮 😬 😐 😕 😯 😶 😇 😏 😑 👲 👳 👮 👷 💂 👶 👦 👧 👨👩👴👵 👱 👼 👸 👹 👺 💀 👽 💩 😺 😸 😻 😽 😼 🙀 😿 😹 😾 🐵 🙈 🙉 🙊 🐶 🐺 🐱 🐭 🐹 🐸 🐯 🐨 🐻 🐷 🐽 🐮 🐗 🐒 🐴 🐑 🐘 🐼 🐧 🐦 🐤 🐥 🐣 🐔 🐍 🐢 🐛 🐝 🐜 🐞 🐌 🐙 🐚 🐠 🐟 🐬 🐳 🐋 🐄 🐏 🐀 🐃 🐅 🐇 🐉 🐎 🐐 🐓 🐕 🐖 🐁 🐂 🐲 🐡 🐊 🐫 🐪 🐆 🐈 🐩 🐾 💐 🌸 🌷 🍀 🌹 🌻 🌺 🍁 🍃 🍂 🌿 🌾 🍄 🌵 🌴 🌲 🌳 🌰 🌱 🌼 🍎 🍏 🍊 🍋 🍒 🍇 🍉 🍓 🍑 🍈 🍌 🍐 🍍 🍠 🍆 🍅 🌽 💮</p>
-<p dir="rtl">עד שיהיה טקסט אמיתי.</p>
-<p dir="rtl"><span style="color:green">לורם איפסום הוא כינוי לטקסט חסר משמעות לחלוטין</span> - הנקרא לפעמים גם דמי טקסט או ג'יבריש - ומיועד להיות ממוקם בסקיצות עיצוביות - של עלונים, מגזינים, מודעות, אתרי אינטרנט וכו' - במקום הטקסט האמיתי הסופי - עד שיהיה טקסט אמיתי.</p>
-<p dir="rtl">אם בשלב הסקיצה העיצובית עדיין לא קיים הטקסט הרלוונטי, לא מומלץ למקם טקסט אמיתי אחר. הסיבה היא, כי בעת הצגת סקיצה עם טקסט אמיתי קריא, יתחיל הצופה לקרוא אוטומטית את הטקסט, ואם תוכן הטקסט לא רלוונטי לעבודה המוצגת - הדבר יסיח את דעתו מהעיצוב. אם בשלב הסקיצה העיצובית עדיין לא קיים הטקסט הרלוונטי, לא מומלץ למקם טקסט אמיתי אחר. הסיבה היא, כי בעת הצגת סקיצה עם טקסט אמיתי קריא, יתחיל הצופה לקרוא אוטומטית את הטקסט, ואם תוכן הטקסט לא רלוונטי לעבודה המוצגת - הדבר יסיח את דעתו מהעיצוב.</p>
-<p>Λορεμ ιπσθμ δολορ σιτ αμετ, μαιορθμ νοστρθμ vολθτπατ ηισ ιδ, θτ νονθμυ μελιορε ηασ, πρι ετ μοvετ σενσεριτ. Εσσε qθαλισqθε σεδ εθ, νεc νεμορε αδιπισcι νε, θτ cονσθλ φαcιλισισ εοσ. Ιδ μελ ιθδιcο vοcιβθσ ρεπθδιαρε. Θτ αεqθε σεμπερ μελ. Εθ ιθσ διcθντ μοδερατιθσ περcιπιτθρ, vιδιτ αθδιρε γραεcισ ετ vελ.</p>
-<ul lang="jp">
-<li>セットセットセットセットセットセットセットセットセットセットセットセットセットセットセットセットセットセットセットセットセットセットセットセットセットセットセットセットセットセットセットセットセットセットセットセットセットセットセットセットセットセットセット</li>
-<li>相ラシフ反別ナホ万軍ヘオタサ改返80厳各ニ読5準げ亜37子ユサツト護地ずりく先聞ル分内ばぐ知敷木てレい。場サソエ麻過だ人皇切ぽぞ迫作転ニ成育レツ経健区交くすおん相入ヘミ再販イニウ較宮職ンみま。座ヘムタス気在ざい認眠ずく望之フコキ邸否レわル背社ゃー歴更げごイ回事ソヤテ税自滋ゃ出商かすゆ直悩ムタヒツ染図くでた庭三コ綿食れょ断目や止住普河制べ。</li>
-
-<li>62元旗昼30界うぱ準境リず治名話モチワヨ者等来イ成会込月スクソル戦悔ふぎゅイ読時てくク路最ロタツス市本ヌツ昨軍くお円盾ぴ。暮ニ告陸イちなる減視なてにそ務謙マネソ試19大ヘク休変しじえ義援ぴふ事報人団ラフケ省訪済媛緒えもぐ。野エ動元てー内録ぶー業水ばにぞや同雅チヱ余康ヒナヱ旅軽し求問ニ真1談レオ攻変むひ数8止所ぞか利法ごぴ出込ら強谷サマカツ後鏝びさじ警悪北保がどきス。</li>
-
-<li>波へぜドひ偽質マヒナワ気企ヱレヨイ担核にてめ巡年ネヨラハ第止トつれ聞共かフり誤51頼9延上乗歌規ぞぱ。第クるひ要査ク吉恵れのスぎ嬉43領ミ被景もどばラ頃犯えい声6用毎レラメヨ画棋すつリ玲地す私投ドつてレ。72品鷹官条む買同モイ毎音ニヲ綸右けほ党日ゆせるさ船日げ聞億ぼあやづ安疑南ヌハメイ韓投ケネシ権宿玉易トひ。</li>
-
-<li>度モユヨ生技アサホト新紙ロ仕書す村取技コク送見けょほれ画進ヨオクワ勢正よめに機58方ば東件ム必集開スヌヒ争空ひッ動20交示分やでさあ。分っぽン新間ユメ待応ヱユレ北男ソリメ同情も展専ニセキネ集阜トぱ当表受ル家錦裁えぐ万禁ンちい正6崎ぞろへ計能トにた登要へなちげ生金緑ー幅熱林み政幅採洋亮なし。</li>
-
-<li>相ミセ写6険ヲメリロ上更クタソマ社竹有テ泰男でど教意ぽし経説つさ材安こ責宮炭熟耳ふンぞル。3知解厚らぶ備登ヨワテサ提葉びり読楽ぱべ分示ト載拡エアノナ掲調にあ事2年ワヒロマ県捕八流群ぴど。対ハナサ衛新篠フサソオ新女アホセ策挑ほはず号方士る質町ぐちふッ事57属ソセミヲ予局あレのリ志埼ヒサ発能たるよづ断剛えぽろ。</li>
+<div id="playground"></div>
+<request-template id="request" jurisdiction="jurisdiction" industry="industry" operator="operator" servicelist="servicelist" subject="subject" date="date" componentquestions="componentquestions" componentdata="componentdata" services="services" pdf="pdf" email="email" emailsubject="'Formal Request for Personal Information Held By Your Company'" pdffilenameprefix="'Access_To_Information_Request'" class="ng-isolate-scope"><form method="post" style="display:none" action="https://api.ami.local/notifications/pdf" target="_blank" class="ng-pristine ng-valid ng-scope"></form><div class="letter ng-scope"><p><span style="font-weight: 400;">敬啟者，</span></p>
+<p><span style="font-weight: 400;">本人特此來信作<span style="font-weight: 400;">查閱資料要求</span>，現附上本人（</span><span style="font-weight: 400;">）的</span><span style="font-weight: 400;">身份證明文件（附件一）。</span></p>
+<p><span style="font-weight: 400;">本人的資料如下：</span></p>
+<p>This is a test</p>
+<p>Ηις δωσενδι ασυσαθα κυαερενδυμ αν. Φαλλι φιφενδω ποσθυλανθ πρι υθ</p>
+<p>💩💩💩💩💩💩💩💩💩💩💩💩💩💩💩</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</p><ul>
+<li ng-repeat="identifier in subject.basic_personal_info | object2Array | orderBy:'+weight'" class="ng-binding ng-scope">英文姓名: Andrew</li><li ng-repeat="identifier in subject.basic_personal_info | object2Array | orderBy:'+weight'" class="ng-binding ng-scope">中文姓名: d;fgkl</li><li ng-repeat="identifier in subject.basic_personal_info | object2Array | orderBy:'+weight'" class="ng-binding ng-scope">香港身份證 或 護照號碼: kljl</li><li ng-repeat="identifier in subject.basic_personal_info | object2Array | orderBy:'+weight'" class="ng-binding ng-scope">Address 1: jlk</li><li ng-repeat="identifier in subject.basic_personal_info | object2Array | orderBy:'+weight'" class="ng-binding ng-scope">City: jljl</li><li ng-repeat="identifier in subject.basic_personal_info | object2Array | orderBy:'+weight'" class="ng-binding ng-scope">Telephone Number: jl</li><li ng-repeat="identifier in subject.basic_personal_info | object2Array | orderBy:'+weight'" class="ng-binding ng-scope">Email Address: ljlj</li>
 </ul>
-<p>jest tekstem stosowanym jako przykładowy wypełniacz w przemyśle poligraficznym. Został po raz pierwszy użyty w XV w. przez nieznanego drukarza do wypełnienia tekstem próbnej książki. Pięć wieków później zaczął być używany przemyśle elektronicznym, pozostając praktycznie niezmienionym. Spopularyzował się w latach 60. XX w. wraz z publikacją arkuszy Letrasetu, zawierających fragmenty Lorem Ipsum, a ostatnio z zawierającym różne wersje Lorem Ipsum oprogramowaniem przeznaczonym do realizacji druków na komputerach osobistych, jak Aldus PageMaker</p>
-<p lang="bo">བོད་ནང་ལ་མཉམ་སྦྲེལ་སྤོང་བའི་ལས་འགུལ་ཧ་ཅང་གྲུབ་འབྲས་ལྡན་པ་ཞིག་བྱུང་བ་རེད། དེ་ཡང་། ཕྱི་ལོ་༢༠༡༡་དང་༢༠༡༢ལོར་ཁམས་ནང་ཆེན་དུ། ས་གནས་བོད་མི་རྣམས་ཀྱིས་རྒྱ་མི་སྔོ་ཚལ་འཚོང་མཁན་ཚོའི་རྩ་ནས་རིན་གོང་སྤར་བའི་སྔོ་ཚལ་ཉོ་མཚམས་བཞག་པ་རེད། དེ་ཡང་། རྒྱ་མི་སྔོ་ཚལ་འཚོང་མཁན་དག་དང་སྔོ་ཚལ་གྱི་རིན་གོང་སྐོར་ལ་གྲོས་བསྡུར་རིམ་པ་བྱས་པར་གྲུབ་འབྲས་མ་བྱུང་ཙང་། ས་གནས་མི་མང་གིས་ཉེན་རྟོག་པར་གནད་དོན་དེ་ཞུ་གཏུགས་བྱས་པ་རེད། འོན་ཀྱང་། ཉེན་རྟོག་པས་ཀྱང་དེ་ལ་ཁ་ཡ་མ་བྱས་པ་རེད། དེར་བརྟེན། ས་གནས་མི་མང་གིས་འདུ་འཛོམས་དང་གྲོས་བསྡུར། འཆར་གཞི་སོགས་བཏང་ནས་མཉམ་སྦྲེལ་སྤོང་བའི་ལས་འགུལ་སྤེལ་འགོ་ཚུགས་པ་རེད། ཁོང་ཚོས་ས་གནས་ཀྱི་བོད་རིགས་ཚོང་པ་འགའ་ལ་རེ་སྐུལ་བྱས་ཤིང་། བོད་རིགས་ཚོང་པ་དེ་དག་གིས་མདོ་སྨད་ཟི་ལིང་ནས་སྔོ་ཚལ་དང་ཟ་འབྲུའི་རིགས་དང་བླངས་སྒོས་སྐྱེལ་འདྲེན་བྱེད་རྒྱུ་ཁས་ལེན་བྱས་པ་རེད།</p>
-<ul dir="rtl">
-	<li>ورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</li>
 
-
-<li>در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</li>
-
-<li>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</li>
-
-<li>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</li>
-<li>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</li>
-<li>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</li>
-<li>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</li>
-<li>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای عل.</li>
-<li>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای عل.</li>
-
+<p><span style="font-weight: 400;">本人現查詢本人被 貴 公司收集及存取，有關本人的（付款紀錄／賬戶資料／使用紀錄）由＿＿＿＿＿＿＿＿＿（日期）至＿＿＿＿＿＿＿＿＿（日期）的資料，包括但不限於以下事項：</span></p>
+<ul>
+<li ng-repeat="data in componentdata | filter: { selected: true }" ng-bind-html="data.data" class="ng-binding ng-scope">通話紀錄（如：曾撥出電話的電話號碼、其時間及日期、通話過程、路由資料和與該電訊通話有關的任何地理位置或行動通訊塔資料）</li><li ng-repeat="data in componentdata | filter: { selected: true }" ng-bind-html="data.data" class="ng-binding ng-scope">已收集有關本人的資料，或與本人的賬戶有關，並正使用貴 公司手提電話裝置的人物／裝置</li><li ng-repeat="data in componentdata | filter: { selected: true }" ng-bind-html="data.data" class="ng-binding ng-scope">任何您曾收集有關本人的地理位置資料，本人的裝置，和／或與本人的賬戶有關的（如：全球定位系統資料、行動通訊塔資料）</li><li ng-repeat="data in componentdata | filter: { selected: true }" ng-bind-html="data.data" class="ng-binding ng-scope">所有與本人有關聯的網際網絡登錄地址、本人的裝置，和／或本人的賬戶（如：本人的裝置／路由器所分配的網際網絡地址、本人造訪的網際網絡地址或網域名稱，及時間、日期與連接埠號碼</li><li ng-repeat="data in componentdata | filter: { selected: true }" ng-bind-html="data.data" class="ng-binding ng-scope">任何向其他單位（包括執法單位和其他的國家機構）披露屬於本人的個人資料，或與本人賬戶或裝置有關的資料。</li><li ng-repeat="data in componentdata | filter: { selected: true }" ng-bind-html="data.data" class="ng-binding ng-scope">手機發送的訊息或多媒體訊息（發送及接受，包括日期、時間及接收訊息者的資訊）</li><li ng-repeat="data in componentdata | filter: { selected: true }" ng-bind-html="data.data" class="ng-binding ng-scope">您曾儲存有關本人的「用戶資料」名單，本人的裝置，和／或 本人的賬戶</lili ng-repeat="data in componentdata | filter: { selected: true }" ng-bind-html="data.data" class="ng-binding ng-scope">您曾收集、保留、或源自電訊服務或裝置；與本人，或曾使用貴 公司服務發送或收到並與本人的賬戶有關的任何附加資料</li>
 </ul>
-</div>
-</div>
-</div>
-</div>
-<!-- <h2>SVG Image</h2>
-<div id="img-container"></div>
-<h2>Canvas</h2> -->
-<canvas id="sourcecanvas"></canvas>
-<h1>Rendered img</h1>
-<script src="pdfmake.min.js"></script>
-<script src="c.js"></script>
-<script type="text/javascript">
-var source = document.getElementById('source');
-var sourcecanvas = document.getElementById('sourcecanvas');
-var numberOfPages = Math.floor(source.parentElement.scrollWidth / source.offsetWidth);
-doc = new cd_Document();
-cd_canvas_doc = new cd_CanvasDocument("letter", sourcecanvas, numberOfPages);
-cd_canvas_doc.createFromEL(source, cd_canvas_doc.createPages);
-</script>
+<p><span style="font-weight: 400;">此外，本人就此要求您於收到本信的四十天內，就有否保留上述與個人資料（私隱）條例19(1)一致的資料，通知本人（及向本人提供您曾保留資料的副本）。</span></p>
+<p><span style="font-weight: 400;">現附上本查詢資料信件的副本（透過掛號信／平郵／電郵）的（英文／中文／該保留資料所屬的語言）。</span></p>
+<p><span style="font-weight: 400;">本信所提供的個人資料只供本人是次</span><span style="font-weight: 400;">查閱資料要求</span><span style="font-weight: 400;">之用，敬希垂注。</span></p>
+<p><span style="font-weight: 400;">敬候回覆，順祝台安。</span></p>
+<p><span style="font-weight: 400;">此致</span></p>
+</div></request-template>
+
 </body>
+<script src="linecalc.js"></script>
+<script>
+	var e = document.getElementById('request');
+	console.log(textToWords(e.innerText));
+</script>
 </html>

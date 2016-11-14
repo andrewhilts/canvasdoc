@@ -1,4 +1,4 @@
-function Page(pageSize, margins, dpiFactor){
+function cdPage(pageSize, margins, dpiFactor){
 	var page = {}
 	page.canvas = document.createElement('canvas');
 	page.ctx = page.canvas.getContext('2d');
@@ -161,8 +161,6 @@ function Document(paperType, margins){
 		  },10);
 		}
 	}
-
-	self.
 
 
 

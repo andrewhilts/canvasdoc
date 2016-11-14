@@ -16,9 +16,8 @@
       .overflow: visible;
       width:10000px;
     }
-      /* last modified: 1 Dec 98 */
       #source {
-        background: #fff;
+        padding:12px 4px;
  -webkit-column-width: 700px;
   -moz-column-width: 700px;
   column-width: 700px;
@@ -26,7 +25,7 @@
       -moz-column-gap: 12px;
            column-gap: 12px;
            -webkit-column-rule: 4px outset #ccc; -moz-column-rule: 4px outset #ccc; column-rule: 4px outset #ccc;
-  height:900px;
+  height:950px;
     -webkit-column-break-inside: avoid;
           -moz-page-break-inside: avoid;
           page-break-inside: avoid;
@@ -46,7 +45,7 @@
   <body>
   <div id="parent">
     <div id="source">
-  <h2>Header</h2>
+  <h2 style="margin-top:0">Header</h2>
 <div>Line breaks</div>
 <div>Testing line breaks</div>
 <div>here</div>
@@ -135,8 +134,10 @@
         n = getLeafNodes(source);
         pageHeight = source.offsetHeight;
         numberOfPages = Math.ceil((n[n.length-1].offsetLeft - n[0].offsetLeft)/pageWidth)
+        window.scroll(0,0);
         html2canvas(source, {
-          logging: true
+          logging: true,
+          background: "#fff"
         }).then(function(canvas) {
             c = new cd_CanvasDocument("letter", canvas, numberOfPages, pageWidth, pageHeight);
             c.createPages();
