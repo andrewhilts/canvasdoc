@@ -13,7 +13,7 @@ function cd_Document(){
 }
 
 
-function cd_CanvasDocument(pageSize, sourcecanvas, numberOfPages){
+function cd_CanvasDocument(pageSize, sourcecanvas, numberOfPages, pageWidth, pageHeight){
 	var self = {};
 	self.numberOfPages = numberOfPages;
 	var pageSizeRatios = {
@@ -45,28 +45,34 @@ function cd_CanvasDocument(pageSize, sourcecanvas, numberOfPages){
 
 	self.canvas = sourcecanvas;
 	self.ctx = sourcecanvas.getContext('2d');
+	self.canvasImg = new Image();
+	self.canvasImg.src = self.canvas.toDataURL("image/jpeg");
+	self.pageHeight = pageHeight;
+	self.pageWidth = pageWidth;
 
-	self.createPages = function(img){
+	self.createPages = function(){
 		self.pages = []
-		// document.body.appendChild(img);
+		document.body.appendChild(self.canvasImg);
 		var canvas = document.createElement("canvas");
+
 		canvas.width = self.pageWidth;
 		canvas.height = self.pageHeight;
 
 		var ctx = canvas.getContext('2d');
 		
 		for(var i=0; i < self.numberOfPages; i++){
-			xOffset = i*self.pageWidth+(36*i);
+			xOffset = i*self.pageWidth+(12*i);
 			ctx.fillStyle = "#ffffff";
 			ctx.fillRect(0,0,self.pageWidth,self.pageHeight);
-			ctx.drawImage(img, xOffset, 0, self.pageWidth,self.pageHeight, 0, 0, self.pageWidth,self.pageHeight);
+			// console.log(self.canvasImg, xOffset, 0, self.pageWidth,self.pageHeight, 0, 0, self.pageWidth,self.pageHeight);
+			ctx.drawImage(self.canvasImg, xOffset, 0, self.pageWidth,self.pageHeight, 0, 0, self.pageWidth,self.pageHeight);
 			dataurl = canvas.toDataURL("image/jpeg");
+			pic = new Image()
+			pic.src = dataurl;
+			document.body.appendChild(pic);
+			console.log(dataurl);
 			self.pages.push(dataurl);
-			// newimg = document.createElement('img');
-			// newimg.setAttribute('src', dataurl);
-			// newimg.setAttribute('width', '25%');
-			// console.log(i, xOffset);
-			// document.body.appendChild(newimg);
+
 		}
 		console.log(self.pages.length);
 		self.createPDF();

@@ -1,43 +1,51 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<style>
-body {
-  font-size:12px;
-}
-#source {
- -webkit-column-width: 2100px;
-  -moz-column-width: 2100px;
-  column-width: 2100px;
-   -webkit-column-gap: 36px;
-      -moz-column-gap: 36px;
-           column-gap: 36px;
-           -webkit-column-rule: 4px outset #ccc; -moz-column-rule: 4px outset #ccc; column-rule: 4px outset #ccc;
-  height:2715px;
-  width:2100px;
-  font-size: 36px;
-}
-.abs-hidden {
-  position:absolute;
-  top:-10000px;
-}
-#sourcecanvas {
-  display:none;
-}
-img {
-  /*position: absolute; */
-}
-</style>
-</head>
-<body>
+  <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <title>
+      display/box/float/clear test
+    </title>
+    <style type="text/css">
 
-<div>
-<div class="abs-hidden">
-<h1>Source</h1>
-<div id="source">
-  <div class="document">
+    #parent {
+/*      overflow:hidden;
+      width:700px;*/
+    }
+    #source {
+      .overflow: visible;
+      width:10000px;
+    }
+      /* last modified: 1 Dec 98 */
+      #source {
+        background: #fff;
+ -webkit-column-width: 700px;
+  -moz-column-width: 700px;
+  column-width: 700px;
+   -webkit-column-gap: 12px;
+      -moz-column-gap: 12px;
+           column-gap: 12px;
+           -webkit-column-rule: 4px outset #ccc; -moz-column-rule: 4px outset #ccc; column-rule: 4px outset #ccc;
+  height:900px;
+    -webkit-column-break-inside: avoid;
+          -moz-page-break-inside: avoid;
+          page-break-inside: avoid;
+          column-count:20;
+          -webkit-column-count:20;
+          -moz-column-count:20;
+  font-size: 12px;
+  column-fill: auto;
+  -moz-column-fill: auto;
+  -webkit-column-fill: auto;
+}
+#source li {
+  margin: 0;
+}
+    </style>
+  </head>
+  <body>
+  <div id="parent">
+    <div id="source">
   <h2>Header</h2>
 <div>Line breaks</div>
 <div>Testing line breaks</div>
@@ -63,7 +71,7 @@ img {
 <p dir="rtl"><span style="color:green">לורם איפסום הוא כינוי לטקסט חסר משמעות לחלוטין</span> - הנקרא לפעמים גם דמי טקסט או ג'יבריש - ומיועד להיות ממוקם בסקיצות עיצוביות - של עלונים, מגזינים, מודעות, אתרי אינטרנט וכו' - במקום הטקסט האמיתי הסופי - עד שיהיה טקסט אמיתי.</p>
 <p dir="rtl">אם בשלב הסקיצה העיצובית עדיין לא קיים הטקסט הרלוונטי, לא מומלץ למקם טקסט אמיתי אחר. הסיבה היא, כי בעת הצגת סקיצה עם טקסט אמיתי קריא, יתחיל הצופה לקרוא אוטומטית את הטקסט, ואם תוכן הטקסט לא רלוונטי לעבודה המוצגת - הדבר יסיח את דעתו מהעיצוב. אם בשלב הסקיצה העיצובית עדיין לא קיים הטקסט הרלוונטי, לא מומלץ למקם טקסט אמיתי אחר. הסיבה היא, כי בעת הצגת סקיצה עם טקסט אמיתי קריא, יתחיל הצופה לקרוא אוטומטית את הטקסט, ואם תוכן הטקסט לא רלוונטי לעבודה המוצגת - הדבר יסיח את דעתו מהעיצוב.</p>
 <p>Λορεμ ιπσθμ δολορ σιτ αμετ, μαιορθμ νοστρθμ vολθτπατ ηισ ιδ, θτ νονθμυ μελιορε ηασ, πρι ετ μοvετ σενσεριτ. Εσσε qθαλισqθε σεδ εθ, νεc νεμορε αδιπισcι νε, θτ cονσθλ φαcιλισισ εοσ. Ιδ μελ ιθδιcο vοcιβθσ ρεπθδιαρε. Θτ αεqθε σεμπερ μελ. Εθ ιθσ διcθντ μοδερατιθσ περcιπιτθρ, vιδιτ αθδιρε γραεcισ ετ vελ.</p>
-<ul lang="jp">
+<ol lang="jp">
 <li>セットセットセットセットセットセットセットセットセットセットセットセットセットセットセットセットセットセットセットセットセットセットセットセットセットセットセットセットセットセットセットセットセットセットセットセットセットセットセットセットセットセットセット</li>
 <li>相ラシフ反別ナホ万軍ヘオタサ改返80厳各ニ読5準げ亜37子ユサツト護地ずりく先聞ル分内ばぐ知敷木てレい。場サソエ麻過だ人皇切ぽぞ迫作転ニ成育レツ経健区交くすおん相入ヘミ再販イニウ較宮職ンみま。座ヘムタス気在ざい認眠ずく望之フコキ邸否レわル背社ゃー歴更げごイ回事ソヤテ税自滋ゃ出商かすゆ直悩ムタヒツ染図くでた庭三コ綿食れょ断目や止住普河制べ。</li>
 
@@ -77,8 +85,8 @@ img {
 </ul>
 <p>jest tekstem stosowanym jako przykładowy wypełniacz w przemyśle poligraficznym. Został po raz pierwszy użyty w XV w. przez nieznanego drukarza do wypełnienia tekstem próbnej książki. Pięć wieków później zaczął być używany przemyśle elektronicznym, pozostając praktycznie niezmienionym. Spopularyzował się w latach 60. XX w. wraz z publikacją arkuszy Letrasetu, zawierających fragmenty Lorem Ipsum, a ostatnio z zawierającym różne wersje Lorem Ipsum oprogramowaniem przeznaczonym do realizacji druków na komputerach osobistych, jak Aldus PageMaker</p>
 <p lang="bo">བོད་ནང་ལ་མཉམ་སྦྲེལ་སྤོང་བའི་ལས་འགུལ་ཧ་ཅང་གྲུབ་འབྲས་ལྡན་པ་ཞིག་བྱུང་བ་རེད། དེ་ཡང་། ཕྱི་ལོ་༢༠༡༡་དང་༢༠༡༢ལོར་ཁམས་ནང་ཆེན་དུ། ས་གནས་བོད་མི་རྣམས་ཀྱིས་རྒྱ་མི་སྔོ་ཚལ་འཚོང་མཁན་ཚོའི་རྩ་ནས་རིན་གོང་སྤར་བའི་སྔོ་ཚལ་ཉོ་མཚམས་བཞག་པ་རེད། དེ་ཡང་། རྒྱ་མི་སྔོ་ཚལ་འཚོང་མཁན་དག་དང་སྔོ་ཚལ་གྱི་རིན་གོང་སྐོར་ལ་གྲོས་བསྡུར་རིམ་པ་བྱས་པར་གྲུབ་འབྲས་མ་བྱུང་ཙང་། ས་གནས་མི་མང་གིས་ཉེན་རྟོག་པར་གནད་དོན་དེ་ཞུ་གཏུགས་བྱས་པ་རེད། འོན་ཀྱང་། ཉེན་རྟོག་པས་ཀྱང་དེ་ལ་ཁ་ཡ་མ་བྱས་པ་རེད། དེར་བརྟེན། ས་གནས་མི་མང་གིས་འདུ་འཛོམས་དང་གྲོས་བསྡུར། འཆར་གཞི་སོགས་བཏང་ནས་མཉམ་སྦྲེལ་སྤོང་བའི་ལས་འགུལ་སྤེལ་འགོ་ཚུགས་པ་རེད། ཁོང་ཚོས་ས་གནས་ཀྱི་བོད་རིགས་ཚོང་པ་འགའ་ལ་རེ་སྐུལ་བྱས་ཤིང་། བོད་རིགས་ཚོང་པ་དེ་དག་གིས་མདོ་སྨད་ཟི་ལིང་ནས་སྔོ་ཚལ་དང་ཟ་འབྲུའི་རིགས་དང་བླངས་སྒོས་སྐྱེལ་འདྲེན་བྱེད་རྒྱུ་ཁས་ལེན་བྱས་པ་རེད།</p>
-<ul dir="rtl">
-	<li>ورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</li>
+<ol dir="rtl">
+  <li>ورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</li>
 
 
 <li>در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</li>
@@ -93,24 +101,46 @@ img {
 <li>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای عل.</li>
 
 </ul>
+
 </div>
 </div>
-</div>
-</div>
-<!-- <h2>SVG Image</h2>
-<div id="img-container"></div>
-<h2>Canvas</h2> -->
-<canvas id="sourcecanvas"></canvas>
-<h1>Rendered img</h1>
-<script src="pdfmake.min.js"></script>
-<script src="c.js"></script>
-<script type="text/javascript">
-var source = document.getElementById('source');
-var sourcecanvas = document.getElementById('sourcecanvas');
-var numberOfPages = Math.floor(source.parentElement.scrollWidth / source.offsetWidth);
-doc = new cd_Document();
-cd_canvas_doc = new cd_CanvasDocument("letter", sourcecanvas, numberOfPages);
-cd_canvas_doc.createFromEL(source, cd_canvas_doc.createPages);
-</script>
-</body>
+<hr style="clear:both">
+    <script type="text/javascript" src="pdfmake.min.js"></script>
+    <script type="text/javascript" src="es6-promise.js"></script>
+    <script type="text/javascript" src="html2canvas.js"></script>
+    <script type="text/javascript" src="c2.js"></script>
+    <script type="text/javascript">
+    function getLeafNodes(master) {
+    var nodes = Array.prototype.slice.call(master.getElementsByTagName("*"), 0);
+    var leafNodes = nodes.filter(function(elem) {
+        if (elem.hasChildNodes()) {
+            // see if any of the child nodes are elements
+            for (var i = 0; i < elem.childNodes.length; i++) {
+                if (elem.childNodes[i].nodeType == 1) {
+                    // there is a child element, so return false to not include
+                    // this parent element
+                    return false;
+                }
+            }
+        }
+        return true;
+    });
+    return leafNodes;
+}
+        source = document.getElementById('source')
+        measuringStick = document.createElement("hr");
+        source.appendChild(measuringStick);
+        pageWidth = measuringStick.offsetWidth;
+        source.removeChild(measuringStick);
+        n = getLeafNodes(source);
+        pageHeight = source.offsetHeight;
+        numberOfPages = Math.ceil((n[n.length-1].offsetLeft - n[0].offsetLeft)/pageWidth)
+        html2canvas(source, {
+          logging: true
+        }).then(function(canvas) {
+            c = new cd_CanvasDocument("letter", canvas, numberOfPages, pageWidth, pageHeight);
+            c.createPages();
+        });
+    </script>
+  </body>
 </html>
