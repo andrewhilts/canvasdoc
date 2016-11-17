@@ -13,9 +13,10 @@ function cd_Document(){
 }
 
 
-function cd_CanvasDocument(pageSize, sourcecanvas, numberOfPages, pageWidth, pageHeight){
+function cd_CanvasDocument(pageSize, sourcecanvas, numberOfPages, pageWidth, pageHeight, columnGap){
 	var self = {};
 	self.numberOfPages = numberOfPages;
+	self.columnGap = columnGap;
 	var pageSizeRatios = {
 		"letter": 1.294117647058824,
 		"legal": 1.647058823529412,
@@ -48,11 +49,11 @@ function cd_CanvasDocument(pageSize, sourcecanvas, numberOfPages, pageWidth, pag
 	self.canvasImg = new Image();
 	self.canvasImg.src = self.canvas.toDataURL("image/jpeg");
 	self.pageHeight = pageHeight;
-	self.pageWidth = pageWidth+8;
+	self.pageWidth = pageWidth;
 
-	self.createPages = function(){
+	self.createPages = function(callback){
 		self.pages = []
-		document.body.appendChild(self.canvasImg);
+		// document.body.appendChild(self.canvasImg);
 		var canvas = document.createElement("canvas");
 
 		canvas.width = self.pageWidth;
@@ -61,7 +62,8 @@ function cd_CanvasDocument(pageSize, sourcecanvas, numberOfPages, pageWidth, pag
 		var ctx = canvas.getContext('2d');
 		
 		for(var i=0; i < self.numberOfPages; i++){
-			xOffset = i*self.pageWidth+(12*i);
+			//xOffset account for columnwidth
+			xOffset = i*self.pageWidth+(i*self.columnGap/2);
 			ctx.fillStyle = "#ffffff";
 			ctx.fillRect(0,0,self.pageWidth,self.pageHeight);
 			// console.log(self.canvasImg, xOffset, 0, self.pageWidth,self.pageHeight, 0, 0, self.pageWidth,self.pageHeight);
@@ -69,14 +71,11 @@ function cd_CanvasDocument(pageSize, sourcecanvas, numberOfPages, pageWidth, pag
 			dataurl = canvas.toDataURL("image/jpeg");
 			pic = new Image()
 			pic.src = dataurl;
-			document.body.appendChild(pic);
-			console.log(dataurl);
+			// document.body.appendChild(pic);
 			self.pages.push(dataurl);
 
 		}
-		console.log(self.pages.length);
 		self.createPDF();
-		self.savePDF();
 	}
 	self.savePDF = function(){
 		self.pdf.download('canvas_pdf');
