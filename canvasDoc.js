@@ -22,11 +22,14 @@ function Page(pageSize, margins, dpiFactor){
 		y:  pageSize.height - margins.bottom
 	};
 
-	fontSize = (35 * dpiFactor).toFixed(0);
-	page.fontFamily = "Times New Roman, serif"
-	page.lineHeight = fontSize * 1.5;
+	page.fontSize = (35 * dpiFactor).toFixed(0);
+	page.fontFamily = "Times New Roman"
+	page.fontlangs = {
+		"zh":  "Hiragino Sans GB"
+	}
+	page.lineHeight = page.fontSize * 1.5;
 
-	page.ctx.font = fontSize + 'px' + " " + page.fontFamily;
+	page.ctx.font = page.fontSize + 'px' + " " + page.fontFamily;
 	page.ctx.fillStyle = '#000';
 
 	page.addBackground = function(){
@@ -66,10 +69,23 @@ function Page(pageSize, margins, dpiFactor){
 		var bulletItem = false;
 		var bottomMargin = page.lineHeight*2;
 
+		if(options.lang && page.fontlangs[options.lang]){
+			page.ctx.font = page.fontSize + 'px' + " " + page.fontlangs[options.lang];
+		}
+		else{
+			page.ctx.font = page.fontSize + 'px' + " " + page.fontFamily;
+		}
+
 		if(typeof options !== "undefined"){
-			if(options.bulletItem && !continuing){
+			if((options.bulletItem || options.orderedItem) && !continuing){
 				bulletItem = true;
-				line = "•   ";
+				if(options.bulletItem){
+					line = "•   ";
+				}
+				if(options.orderedItem){
+					inx = options.listItemNumber;
+					line = inx + ".   ";
+				}
 				if(dir == "rtl"){
 					startX -= 45;
 				}
@@ -78,7 +94,7 @@ function Page(pageSize, margins, dpiFactor){
 				}
 				maxWidth -= 45;
 			}
-			if(options.bulletItem && continuing){
+			if((options.bulletItem || options.orderedItem) && continuing){
 				bulletItem = true;
 				if(dir == "rtl"){
 					startX -= 45+40;
@@ -241,8 +257,10 @@ function Document(paperType, margins){
 	self.getDescendants = function(node, accum, textNodes) {
 	    var i;
 	    accum = accum || [];
+	    var childlist = Array.prototype.slice.call(node.children);
 	    for (i = 0; i < node.children.length; i++) {
-	    	accum.push({el: node.children[i], parentTagName: node.tagName, tagName: node.tagName});
+	    	// console.log(node.children[i],childlist.indexOf(node.children[i]));
+	    	accum.push({el: node.children[i], parentTagName: node.tagName, tagName: node.tagName, siblingIndex: childlist.indexOf(node.children[i])});
 	        self.getDescendants(node.children[i], accum);
 	    }
 	    return accum;
@@ -262,8 +280,14 @@ function Document(paperType, margins){
 				else{
 					dir = "ltr";
 				}
+				siblingIndex = nodes[i].siblingIndex;
+				
 				pdfContent.push({
+					'el': nodes[i].el,
+					'lang': nodes[i].el.lang ? nodes[i].el.lang : nodes[i].el.parentElement.lang,
 					'tag': nodes[i].el.tagName,
+					'parentTag': nodes[i].parentTagName,
+					'siblingIndex': nodes[i].siblingIndex,
 					'text': nodes[i].el.innerText,
 					'dir': dir
 				});
@@ -271,8 +295,37 @@ function Document(paperType, margins){
 		}
 		for(var i=0; i < pdfContent.length; i++){
 			pdfContent[i].options = {};
+			pdfContent[i].options.lang = pdfContent[i].lang;
+
 			if(pdfContent[i].tag == "LI"){
-				pdfContent[i].options.bulletItem = true;
+				if(pdfContent[i].parentTag == "UL"){
+					pdfContent[i].options.bulletItem = true;
+				}
+				if(pdfContent[i].parentTag == "OL"){
+					pdfContent[i].options.orderedItem = true;
+					if(pdfContent[i].siblingIndex>0){
+						if(pdfContent[i-1].options.listItemNumber){
+							if(pdfContent[i].el.value){
+								listNumber = pdfContent[i].el.value;
+							}
+							else{
+								listNumber = pdfContent[i-1].options.listItemNumber+1;
+							}
+						}
+						else{
+							listNumber = pdfContent[i].siblingIndex+1;
+						}
+					}
+					else{
+						if(pdfContent[i].el.parentElement.start){
+							listNumber = pdfContent[i].el.parentElement.start
+						}
+						else{
+							listNumber = 1;
+						}
+					}
+					pdfContent[i].options.listItemNumber = listNumber;
+				}
 				if(i+1 < pdfContent.length && pdfContent[i+1].tag == "LI"){
 					pdfContent[i].options.noBottomMargin = true;
 				}
