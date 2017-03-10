@@ -27,9 +27,13 @@ function Page(pageSize, margins, dpiFactor){
 	page.fontlangs = {
 		"zh":  "Hiragino Sans GB"
 	}
-	page.lineHeight = page.fontSize * 1.5;
+	page.lineHeightlangs = {
+		"zh": page.fontSize * 1.1
+	}
+	page.lineHeight = page.fontSize * 1.3;
 
-	page.ctx.font = page.fontSize + 'px' + " " + page.fontFamily;
+	fontArgs = page.ctx.font.split(' ');
+	page.ctx.font = page.fontSize + 'px' + ' ' + fontArgs[fontArgs.length - 1]; 
 	page.ctx.fillStyle = '#000';
 
 	page.addBackground = function(){
@@ -67,13 +71,28 @@ function Page(pageSize, margins, dpiFactor){
 		var line = '';
 
 		var bulletItem = false;
-		var bottomMargin = page.lineHeight*2;
-
-		if(options.lang && page.fontlangs[options.lang]){
-			page.ctx.font = page.fontSize + 'px' + " " + page.fontlangs[options.lang];
+		var lineHeight;
+		
+		if(options.lang && page.lineHeightlangs[options.lang]){
+				fontArgs = page.ctx.font.split(' ');
+	page.ctx.font = page.fontSize + 'px' + ' ' + fontArgs[fontArgs.length - 1]; 
+			lineHeight = page.lineHeightlangs[options.lang];
 		}
 		else{
-			page.ctx.font = page.fontSize + 'px' + " " + page.fontFamily;
+				fontArgs = page.ctx.font.split(' ');
+	page.ctx.font = page.fontSize + 'px' + ' ' + fontArgs[fontArgs.length - 1]; 
+			lineHeight  = page.lineHeight;
+		}
+
+		var bottomMargin = page.lineHeight * 1.5;
+
+		if(options.lang && page.fontlangs[options.lang]){
+				fontArgs = page.ctx.font.split(' ');
+	page.ctx.font = page.fontSize + 'px' + ' ' + fontArgs[fontArgs.length - 1]; 
+		}
+		else{
+				fontArgs = page.ctx.font.split(' ');
+	page.ctx.font = page.fontSize + 'px' + ' ' + fontArgs[fontArgs.length - 1]; 
 		}
 
 		if(typeof options !== "undefined"){
@@ -105,7 +124,7 @@ function Page(pageSize, margins, dpiFactor){
 				maxWidth -= 45+40;
 			}
 			if(options.noBottomMargin){
-				bottomMargin = page.lineHeight;
+				bottomMargin = lineHeight;
 			}
 		}
 		firstNewLineDone = false;
@@ -126,7 +145,7 @@ function Page(pageSize, margins, dpiFactor){
 					this.ctx.direction = "rtl";
 				}
 				// this.ctx.fillStyle = '#ccc';
-				// this.ctx.fillRect(rectStart, this.paintPosition.y-page.lineHeight, maxWidth, page.lineHeight);
+				// this.ctx.fillRect(rectStart, this.paintPosition.y-lineHeight, maxWidth, lineHeight);
 				// this.ctx.fillStyle = '#000';
 				this.ctx.fillText(line, startX, this.paintPosition.y);
 				this.ctx.textAlign = "left";
@@ -143,7 +162,7 @@ function Page(pageSize, margins, dpiFactor){
 					firstNewLineDone = true;
 				}
 				line = words[n];
-				this.paintPosition.y += page.lineHeight;
+				this.paintPosition.y += lineHeight;
 			}
 			else {
 				line = testLine;

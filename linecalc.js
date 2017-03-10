@@ -20,7 +20,7 @@ function textToWords(text){
 		newHeight = el.offsetHeight;
 		if(newHeight > oldHeight){
 			//new array item
-			words.push(char)
+			words.push(char);
 			currentWordIndex++;
 			el.innerText = char;
 			newHeight = 0;

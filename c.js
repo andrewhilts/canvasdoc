@@ -62,11 +62,11 @@ function cd_CanvasDocument(pageSize, sourcecanvas, numberOfPages){
 			ctx.drawImage(img, xOffset, 0, self.pageWidth,self.pageHeight, 0, 0, self.pageWidth,self.pageHeight);
 			dataurl = canvas.toDataURL("image/jpeg");
 			self.pages.push(dataurl);
-			// newimg = document.createElement('img');
-			// newimg.setAttribute('src', dataurl);
-			// newimg.setAttribute('width', '25%');
-			// console.log(i, xOffset);
-			// document.body.appendChild(newimg);
+			newimg = document.createElement('img');
+			newimg.setAttribute('src', dataurl);
+			newimg.setAttribute('width', '25%');
+			console.log(i, xOffset);
+			document.body.appendChild(newimg);
 		}
 		console.log(self.pages.length);
 		self.createPDF();
